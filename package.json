@@ -1,0 +1,60 @@
+{
+  "name": "ftcher",
+  "displayName": "ftcher",
+  "description": "",
+  "version": "0.0.1",
+  "publisher": "srgchrksv",
+  "icon": "ftcher.jpeg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srgchrksv/ftcher"},
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "AI", "Chat"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "ftcher.chat",
+        "fullName": "ftcher",
+        "name": "ftcher",
+        "description": "fetch stuff",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "anthropic",
+            "description": "use anthropic for chat"
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.93.0",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.3",
+    "@vscode/prompt-tsx": "^0.2.9-alpha"
+  }
+}
